@@ -1,0 +1,73 @@
+.sidebutton_Group {
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.sideBtn_size {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin: 15px;
+}
+
+.sideBtn_Design {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(45deg);
+    border: 3px solid #453931;
+    background-color: #a0785f;
+    border-radius: 10px;
+    transition: ease-in-out 0.3s;
+    color:antiquewhite;
+}
+
+.sideBtn_Design:hover{
+    border-color: #d16e2c;
+    background-color: #ffdeb8;
+    box-shadow: 0px 0px 10px #f0904b;
+}
+
+.sideBtn_text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    z-index: 999;
+    transform: rotate(-45deg);
+    transition: ease-in-out 0.3s;
+}
+
+.sideBtn_text:hover{
+    color:#d16e2c;
+}
+.sideBtn_text > img {
+    width:20px;
+}
+
+.iconON{
+    color:antiquewhite;
+}
+
+.iconOFF{
+    color:rgb(199, 165, 120);
+}
+
+.shake{
+    animation: shake 2s infinite;
+}
+
+@keyframes shake{
+    40%{ transform: rotate(-45deg); }
+    50%{ transform: rotate(-65deg); }
+    60%{ transform: rotate(-25deg); }
+    70%{ transform: rotate(-65deg); }
+    80%{ transform: rotate(-25deg); }
+}

@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap%27');
+
+.btn_allBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.btn_allBox>div{
+    display: flex;
+    flex-direction: row;
+}
+
+.randomBtn_box>li{
+    width: 70px;
+    height: 30px;
+    margin: 0px 10px 10px 0px;
+}
+
+.selectBtn_box>li{
+    width: 160px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.lockBtn_Design>li{
+    width: 10px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+/*-------------------------------------------------------*/
+
+
+.randomBtn_Design {
+    /*개별랜덤버튼*/
+    position: absolute;
+    width: 70px;
+    height: 30px;
+    margin-right: 10px;
+    border-radius: 10px;
+    color: #1a1614;
+    border: 3px solid #3b342f;
+    background: #bb8767;
+    font-weight: 600;
+    box-shadow: 0px 3px 0px #3b342f;
+}
+
+.randomBtn_Design:hover {
+    background: #eba75e;
+    color: #99501b;
+}
+
+.randomBtn_Design:active {
+    background: #ffeab8;
+    margin-top: 3px;
+    box-shadow: none;
+}
+
+.selectBtn_Design {
+    /*개별셀렉트버튼*/
+    width: 160px;
+    height: 30px;
+    border: 3px solid #746655;
+    background-color: #fff;
+    border-radius: 10px;
+    padding-left: 10px;
+    color: #746655;
+}
+
+.lockBtn_Design {
+    /*개별셀렉트버튼*/
+    font-size: 16px;
+    color: #8c5c39;
+    width: 10px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+
+.png_Name {
+    width: 70%;
+    margin: 10px 0px;
+    height: 30px;
+    border: 2px solid #746655;
+    background-color: #fff;
+    border-radius: 20px;
+    padding-left: 10px;
+    color: #746655;
+}
+
+.png_Name::placeholder {
+    font-family: 'Noto Sans KR';
+    font-size: 12px;
+    color: #ccc;
+}
+
+
+
+
+
+/*-------------------------------------------------------*/
+
+.lastBtn_Box{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+}
+.lastBtn_Box > li{
+    width: 110px;
+    height: 30px;
+}
+.lastBtn_Box > li:nth-child(1){margin-right: 15px;}
+
+
+.AllRandomBtn_Design {
+    position: absolute;
+    /*올랜덤버튼*/
+    width: 115px;
+    height: 30px;
+    border-radius: 10px;
+    color: #3b342f;
+    border: 3px solid #3b342f;
+    background-color: #f3b757;
+    font-weight: 600;
+    box-shadow: 0px 3px 0px #3b342f;
+}
+
+.AllRandomBtn_Design:hover {
+    background-color: #e46a36;
+    color: #f1e4db;
+}
+
+.AllRandomBtn_Design:active {
+    background-color: #ffeab8;
+    color: #99501b;
+    margin-top: 3px;
+    box-shadow: none;
+}
+
+
+
+.CreateProfile_Design {
+    /*프로필생성버튼*/
+    position: absolute;
+    width: 115px;
+    height: 30px;
+    border-radius: 10px;
+    color: #3b342f;
+    border: 3px solid #3b342f;
+    background-color: #b2e168;
+    font-weight: 600;
+    box-shadow: 0px 3px 0px #3b342f;
+}
+
+.CreateProfile_Design:hover {
+    background-color: #48842f;
+    color: #f1e4db;
+}
+
+.CreateProfile_Design:active {
+    background-color: #ffeab8;
+    color: #48842f;
+    margin-top: 3px;
+    box-shadow: none;
+}
+
+
+.flash{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top:0px;
+    left: 0px;
+    z-index: 99;
+    animation: opacity 1s forwards;
+}
+
+@keyframes opacity {
+    50%{background-color: #fff; opacity: 0.9;}
+}

@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@600&family=Noto+Sans+KR&display=swap');
+
+@font-face {
+  font-family: 'maple';
+  src: url('../public/Maplestory\ Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'cookie';
+  src: url('../public/CookieRunFont_TTF/CookieRun\ Black.ttf') format('truetype');
+}
+
+* {
+  cursor: url(../public/cur/pen.cur), auto !important;
+  margin: 0;
+  padding: 0;
+  font-family: maple;
+
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  border-style: none;
+  background-color: rgb(0, 0, 0, 0);
+}
+
+a,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: #000;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  background-image: url('https://i.imgur.com/SJiByoL.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+/*================기본셋팅================*/
+
+
+.viewGroup__ {
+  position: relative;
+  width: 350px;
+  height: 570px;
+  border: 3px solid #453931;
+  border-radius: 20px;
+  background-color: #fbeddc;
+  margin-right: 40px;
+  overflow: hidden;
+  margin-top: -100%;
+  animation: moving 2.3s forwards;
+  transition: all ease-in-out 0.3s;
+}
+
+.viewGroup__:hover {
+  box-shadow: 0px 0px 15px #816958;
+}
+
+footer {
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #e3ceb1;
+  font-size: 14px;
+  background-color: #845c44;
+  line-height: 140%;
+}
+
+
+.profileGroup__ {
+  position: relative;
+  width: 350px;
+  height: 500px;
+  border: 3px solid #453931;
+  border-radius: 10px;
+  background-color: #fbeddc;
+  margin-bottom: -100%;
+  transition: all ease-in-out 0.3s;
+
+}
+
+.profileGroup__:hover {
+  box-shadow: 0px 0px 15px #816958;
+}
+
+.btnAllGroup__ {
+  height: 600px;
+  margin-bottom: -100%;
+  animation: moving2 2.3s forwards;
+}
+
+@keyframes moving {
+
+  70% {
+    margin-top: 50px;
+  }
+
+  100% {
+    margin-top: 0px;
+  }
+
+}
+
+@keyframes moving2 {
+
+  70% {
+    margin-bottom: 170px;
+  }
+
+  100% {
+    margin-bottom: 100px;
+  }
+
+}
+
+
+/*===============패턴CSS=================*/
+
+.Top_ber {
+  position: absolute;
+  width: 170px;
+  height: 15px;
+  border: 3px solid #453931;
+  border-radius: 20px;
+  background-color: #a0785f;
+  top: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.Pattern {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  background-image: url(https://i.imgur.com/dBuAKhc.png);
+  opacity: 0.6;
+}
+
+.ptop-left {
+  top: 0px;
+  left: 0px;
+}
+
+.ptop-right {
+  top: 0px;
+  right: 0px;
+  transform: rotate(90deg);
+}
+
+.pbottom-left {
+  bottom: 0px;
+  left: 0px;
+  transform: rotate(270deg);
+}
+
+.pbottom-right {
+  bottom: 0px;
+  right: 0px;
+  transform: rotate(180deg);
+}
