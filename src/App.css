@@ -1,13 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@600&family=Noto+Sans+KR&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Blinker:wght@600&family=Noto+Sans+KR&display=swap");
 
 @font-face {
-  font-family: 'maple';
-  src: url('../public/Maplestory\ Bold.ttf') format('truetype');
+  font-family: "maple";
+  src: url("../public/maplestory\ Bold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'cookie';
-  src: url('../public/CookieRunFont_TTF/CookieRun\ Black.ttf') format('truetype');
+  font-family: "cookie";
+  src: url("../public/cookieRunFont_TTF/cookieRun\ Black.ttf")
+    format("truetype");
 }
 
 * {
@@ -15,7 +16,6 @@
   margin: 0;
   padding: 0;
   font-family: maple;
-
 }
 
 li {
@@ -42,7 +42,7 @@ a:active {
   width: 100%;
   height: auto;
   min-height: 100vh;
-  background-image: url('https://i.imgur.com/SJiByoL.png');
+  background-image: url("https://i.imgur.com/SJiByoL.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -50,7 +50,6 @@ a:active {
 }
 
 /*================기본셋팅================*/
-
 
 .viewGroup__ {
   position: relative;
@@ -82,7 +81,6 @@ footer {
   line-height: 140%;
 }
 
-
 .profileGroup__ {
   position: relative;
   width: 350px;
@@ -92,7 +90,6 @@ footer {
   background-color: #fbeddc;
   margin-bottom: -100%;
   transition: all ease-in-out 0.3s;
-
 }
 
 .profileGroup__:hover {
@@ -106,7 +103,6 @@ footer {
 }
 
 @keyframes moving {
-
   70% {
     margin-top: 50px;
   }
@@ -114,11 +110,9 @@ footer {
   100% {
     margin-top: 0px;
   }
-
 }
 
 @keyframes moving2 {
-
   70% {
     margin-bottom: 170px;
   }
@@ -126,9 +120,7 @@ footer {
   100% {
     margin-bottom: 100px;
   }
-
 }
-
 
 /*===============패턴CSS=================*/
 
