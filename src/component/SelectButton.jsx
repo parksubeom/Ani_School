@@ -109,7 +109,7 @@ function SelectButton({
       }
       setRandomEyes(Math.round(Math.random() * (13 - 1) + 1));
     } else if (category === "입랜덤") {
-      if (randommouth > 10) {
+      if (randommouth > 8) {
         if (!window.confirm("✨레어 입✨입니다. 바꾸시겠습니까?")) {
           return;
         }
@@ -198,7 +198,7 @@ function SelectButton({
       <div>
         {audio ? (
           <audio
-            src="https://parksubeom.github.io/Project_RetroAnimal_Generator//audio/click_1.mp3"
+            src="https://anischool.s3.ap-northeast-2.amazonaws.com/audio/click_1.mp3"
             autoPlay={audio}
           ></audio>
         ) : null}
@@ -263,7 +263,7 @@ function SelectButton({
 
         {lockaudio ? (
           <audio
-            src="https://parksubeom.github.io/Project_RetroAnimal_Generator//audio/lock.mp3"
+            src="https://anischool.s3.ap-northeast-2.amazonaws.com/audio/lock.mp3"
             autoPlay={lockaudio}
           ></audio>
         ) : null}
@@ -377,7 +377,7 @@ function SelectButton({
       ></input>
       {download ? (
         <audio
-          src="https://parksubeom.github.io/Project_RetroAnimal_Generator//audio/camera2.wav"
+          src="https://anischool.s3.ap-northeast-2.amazonaws.com/audio/camera2.wav"
           autoPlay={download}
         ></audio>
       ) : null}
