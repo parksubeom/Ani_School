@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock, faUnlock } from "@fortawesome/free-solid-svg-icons";
 import domtoimage from "dom-to-image";
 import { saveAs } from "file-saver";
-const { Options } = require("./selectData");
+const { Options } = require("./SelectData");
 //셀렉트 버튼을 누르면  온클릭이벤트가 실행되고 해당버튼에 고유한 값을 앱컴포넌트로 올려줘야한다.
 //랜덤버튼을 누르면 온클릭이벤트가 실행되고, Matr.round(Matr.rendom)*10 메서드를 실행해서 나온 정수값을 state값에 넣어준다.
 //여기서 나온 정수값은 Viewsection에서 이미지를 랜덤으로 불러오기위해 필요하기에 Viewsection으로 값을 보내줘야한다.
@@ -40,21 +40,26 @@ function SelectButton({
   const [patternlock, setPatternLock] = useState(true);
   const [backgroundlock, setBackgroundLock] = useState(true);
 
-  const faceOptions = Options[0];
-  const colorOptions = Options[1];
-  const eyesOptions = Options[2];
-  const mouthOptions = Options[3];
-  const accOptions = Options[4];
-  const patternOptions = Options[5];
-  const backgroundOptions = Options[6];
+  const randomCategory = [
+    "얼굴랜덤",
+    "컬러랜덤",
+    "눈랜덤",
+    "입랜덤",
+    "악세랜덤",
+    "무늬랜덤",
+    "배경랜덤",
+  ];
+  const selectArr = [
+    randomface,
+    randomcolor,
+    randomeyes,
+    randommouth,
+    randomacc,
+    randompattern,
+    randombackground,
+  ];
 
   const allrandomBtn = () => {
-    /*if (randomcolor > 15 || randomeyes > 12 || randommouth > 10 || randombackground > 12) {
-      if (!window.confirm("✨레어✨요소가 포함되어 있습니다. 바꾸시겠습니까?")) {
-        return
-      }
-    }*/
-
     if (facelock) {
       setRandomFace(Math.round(Math.random() * 8));
     }
@@ -68,13 +73,13 @@ function SelectButton({
       setRandomMouth(Math.round(Math.random() * 11));
     }
     if (acclock) {
-      setRandomAcc(Math.round(Math.random() * (30 - 1)) + 1);
+      setRandomAcc(Math.round(Math.random() * 30));
     }
     if (patternlock) {
-      setRandomPattern(Math.round(Math.random() * (6 - 1)) + 1);
+      setRandomPattern(Math.round(Math.random() * 6));
     }
     if (backgroundlock) {
-      setRandombackground(Math.round(Math.random() * (19 - 1)) + 1);
+      setRandombackground(Math.round(Math.random() * 18));
     }
     setAudio(!audio);
     setSectionFlash1(true);
@@ -86,35 +91,35 @@ function SelectButton({
     }, 300);
   };
   //==========================랜덤버튼함수==========================//
-  const randomBtn = (setRandom) => {
-    if (setRandom === setRandomFace) {
+  const randomBtn = (category) => {
+    if (category === "얼굴랜덤") {
       setRandomFace(Math.floor(Math.random() * 8));
-    } else if (setRandom === setRandomColor) {
+    } else if (category === "컬러랜덤") {
       if (randomcolor > 15) {
         if (!window.confirm("✨레어컬러✨입니다. 바꾸시겠습니까?")) {
           return;
         }
       }
       setRandomColor(Math.round(Math.random() * 17));
-    } else if (setRandom === setRandomEyes) {
+    } else if (category === "눈랜덤") {
       if (randomeyes > 12) {
         if (!window.confirm("✨레어 눈✨입니다. 바꾸시겠습니까?")) {
           return;
         }
       }
-      setRandomEyes(Math.round(Math.random() * 13));
-    } else if (setRandom === setRandomMouth) {
+      setRandomEyes(Math.round(Math.random() * (13 - 1) + 1));
+    } else if (category === "입랜덤") {
       if (randommouth > 10) {
         if (!window.confirm("✨레어 입✨입니다. 바꾸시겠습니까?")) {
           return;
         }
       }
       setRandomMouth(Math.round(Math.random() * 11));
-    } else if (setRandom === setRandomAcc) {
+    } else if (category === "악세랜덤") {
       setRandomAcc(Math.round(Math.random() * (30 - 1)) + 1);
-    } else if (setRandom === setRandomPattern) {
+    } else if (category === "무늬랜덤") {
       setRandomPattern(Math.round(Math.random() * (6 - 1)) + 1);
-    } else if (setRandom === setRandombackground) {
+    } else if (category === "배경랜덤") {
       if (randombackground > 12) {
         if (!window.confirm("✨레어 배경✨입니다. 바꾸시겠습니까?")) {
           return;
@@ -129,20 +134,20 @@ function SelectButton({
   };
   //==========================셀렉버튼함수==========================//
   const SelectBtn = (e, setSelect) => {
-    if (setSelect === "face") {
-      setRandomFace(e.target.value);
-    } else if (setSelect === "color") {
-      setRandomColor(e.target.value);
-    } else if (setSelect === "eyes") {
-      setRandomEyes(e.target.value);
-    } else if (setSelect === "mouth") {
-      setRandomMouth(e.target.value);
-    } else if (setSelect === "acc") {
-      setRandomAcc(e.target.value);
-    } else if (setSelect === "pattern") {
-      setRandomPattern(e.target.value);
-    } else if (setSelect === "background") {
-      setRandombackground(e.target.value);
+    if (setSelect === "faceselect") {
+      setRandomFace(Number(e.target.value));
+    } else if (setSelect === "colorselect") {
+      setRandomColor(Number(e.target.value));
+    } else if (setSelect === "eyesselect") {
+      setRandomEyes(Number(e.target.value));
+    } else if (setSelect === "mouthselect") {
+      setRandomMouth(Number(e.target.value));
+    } else if (setSelect === "accselect") {
+      setRandomAcc(Number(e.target.value));
+    } else if (setSelect === "patternselect") {
+      setRandomPattern(Number(e.target.value));
+    } else if (setSelect === "backgroundselect") {
+      setRandombackground(Number(e.target.value));
     }
   };
   //==========================png파일명 생성 함수==========================//
@@ -197,171 +202,26 @@ function SelectButton({
             autoPlay={audio}
           ></audio>
         ) : null}
+
+        {/*랜덤버튼 리스트 */}
         <ul className="randomBtn_box">
-          <li>
-            <button
-              type="button"
-              value="button"
-              className="randomBtn_Design"
-              onClick={() => randomBtn(setRandomFace)}
-            >
-              얼굴랜덤
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
-              value="button"
-              className="randomBtn_Design"
-              onClick={() => randomBtn(setRandomColor)}
-            >
-              컬러랜덤
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
-              value="button"
-              className="randomBtn_Design"
-              onClick={() => randomBtn(setRandomEyes)}
-            >
-              눈랜덤
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
-              value="button"
-              className="randomBtn_Design"
-              onClick={() => randomBtn(setRandomMouth)}
-            >
-              입랜덤
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
-              value="button"
-              className="randomBtn_Design"
-              onClick={() => randomBtn(setRandomAcc)}
-            >
-              악세랜덤
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
-              value="button"
-              className="randomBtn_Design"
-              onClick={() => randomBtn(setRandomPattern)}
-            >
-              무늬랜덤
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
-              value="button"
-              className="randomBtn_Design"
-              onClick={() => randomBtn(setRandombackground)}
-            >
-              배경 랜덤
-            </button>
-          </li>
+          {randomCategory.map((category) => {
+            return (
+              <li>
+                <button
+                  type="button"
+                  value="button"
+                  className="randomBtn_Design"
+                  onClick={() => randomBtn(`${category}`)}
+                >
+                  {category}
+                </button>
+              </li>
+            );
+          })}
         </ul>
-
-        <ul className="selectBtn_box">
-          <li>
-            <select
-              className="selectBtn_Design"
-              onChange={(event) => SelectBtn(event, "face")}
-              value={randomface}
-            >
-              {faceOptions.faceselect.map((item) => (
-                <option key={item.key} value={item.key}>
-                  {item.value}
-                </option>
-              ))}
-            </select>
-          </li>
-
-          <li>
-            <select
-              className="selectBtn_Design"
-              onChange={(event) => SelectBtn(event, "color")}
-              value={randomcolor}
-            >
-              {randomcolor > 15 ? <option>🎉레어 컬러🎉</option> : null}
-              {colorOptions.colorselect.map((item) => (
-                <option key={item.key} value={item.key}>
-                  {item.value}
-                </option>
-              ))}
-            </select>
-          </li>
-
-          <li>
-            <select
-              className="selectBtn_Design"
-              onChange={(event) => SelectBtn(event, "eyes")}
-              value={randomeyes}
-            >
-              {randomeyes > 12 ? <option>🎉레어 눈🎉</option> : null}
-              {eyesOptions.eyesselect.map((item) => (
-                <option key={item.key} value={item.key}>
-                  {item.value}
-                </option>
-              ))}
-            </select>
-          </li>
-
-          <li>
-            <select
-              className="selectBtn_Design"
-              onChange={(event) => SelectBtn(event, "mouth")}
-              value={randommouth}
-            >
-              {randommouth > 10 ? <option>🎉레어 입🎉</option> : null}
-              {mouthOptions.mouthselect.map((item) => (
-                <option key={item.key} value={item.key}>
-                  {item.value}
-                </option>
-              ))}
-            </select>
-          </li>
-
-          <li>
-            {
-              <select
-                className="selectBtn_Design"
-                onChange={(event) => SelectBtn(event, "acc")}
-                value={randomacc}
-              >
-                {accOptions.accselect.map((item) => (
-                  <option key={item.key} value={item.key}>
-                    {item.value}
-                  </option>
-                ))}
-              </select>
-            }
-          </li>
-
-          <li>
-            <select
-              className="selectBtn_Design"
-              onChange={(event) => SelectBtn(event, "pattern")}
-              value={randompattern}
-            >
-              {patternOptions.patternselect.map((item) => (
-                <option key={item.key} value={item.key}>
-                  {item.value}
-                </option>
-              ))}
-            </select>
-          </li>
-
-          <li>
-            <select
+        {/*
+        <select
               className="selectBtn_Design"
               onChange={(event) => SelectBtn(event, "background")}
               value={randombackground}
@@ -373,8 +233,34 @@ function SelectButton({
                 </option>
               ))}
             </select>
-          </li>
+                  //selectParts가 1,2,3,6 이라면 if문으로 쪼개서 분기해준다.
+            */}
+
+        {/*선택버튼 리스트 */}
+        <ul className="selectBtn_box">
+          {Options.map((select) => {
+            let selectParts = Number(Options.indexOf(select));
+            console.log(selectArr[selectParts]);
+            return (
+              <li>
+                <select
+                  className="selectBtn_Design"
+                  onChange={(event) => SelectBtn(event, Object.keys(select)[0])}
+                  value={selectArr[selectParts]}
+                >
+                  {select[Object.keys(select)].map((item) => {
+                    return (
+                      <option key={item.key} value={item.key}>
+                        {item.value}
+                      </option>
+                    );
+                  })}
+                </select>
+              </li>
+            );
+          })}
         </ul>
+
         {lockaudio ? (
           <audio
             src="https://parksubeom.github.io/Project_RetroAnimal_Generator//audio/lock.mp3"
