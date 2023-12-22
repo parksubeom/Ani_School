@@ -1,5 +1,5 @@
 import "../Style/SelectButton.css";
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock, faUnlock } from "@fortawesome/free-solid-svg-icons";
 import domtoimage from "dom-to-image";

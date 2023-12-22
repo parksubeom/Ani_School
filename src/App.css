@@ -7,8 +7,7 @@
 
 @font-face {
   font-family: "cookie";
-  src: url("../public/cookieRunFont_TTF/cookieRun\ Black.ttf")
-    format("truetype");
+  src: url("../public/cookieRunFont_TTF/cookieRun Black.ttf") format("truetype");
 }
 
 * {
