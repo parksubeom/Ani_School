@@ -1,51 +1,51 @@
 {
-  "homepage": "https://parksubeom.github.io/Project_RetroAnimal_Generator",
+  "homepage": "https://d12v3b538m291m.cloudfront.net/",
   "name": "animal-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-      "@fortawesome/fontawesome-svg-core": "^6.3.0",
-      "@fortawesome/free-brands-svg-icons": "^6.3.0",
-      "@fortawesome/free-regular-svg-icons": "^6.3.0",
-      "@fortawesome/free-solid-svg-icons": "^6.3.0",
-      "@fortawesome/react-fontawesome": "^0.2.0",
-      "@testing-library/jest-dom": "^5.16.5",
-      "@testing-library/react": "^13.4.0",
-      "@testing-library/user-event": "^13.5.0",
-      "aos": "^3.0.0-beta.6",
-      "dom-to-image": "^2.6.0",
-      "file-saver": "^2.0.5",
-      "gh-pages": "^5.0.0",
-      "html2canvas": "^1.4.1",
-      "react": "^18.2.0",
-      "react-dom": "^18.2.0",
-      "react-scripts": "5.0.1",
-      "web-vitals": "^2.1.4"
+    "@fortawesome/fontawesome-svg-core": "^6.3.0",
+    "@fortawesome/free-brands-svg-icons": "^6.3.0",
+    "@fortawesome/free-regular-svg-icons": "^6.3.0",
+    "@fortawesome/free-solid-svg-icons": "^6.3.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "퍀^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "aos": "^3.0.0-beta.6",
+    "dom-to-image": "^2.6.0",
+    "file-saver": "^2.0.5",
+    "gh-pages": "^5.0.0",
+    "html2canvas": "^1.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
-      "start": "react-scripts start",
-      "build": "react-scripts build",
-      "test": "react-scripts test",
-      "eject": "react-scripts eject",
-      "deploy": "gh-pages -d build",
-      "predeploy": "npm run build"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
   },
   "eslintConfig": {
-      "extends": [
-          "react-app",
-          "react-app/jest"
-      ]
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
-      "production": [
-          ">0.2%",
-          "not dead",
-          "not op_mini all"
-      ],
-      "development": [
-          "last 1 chrome version",
-          "last 1 firefox version",
-          "last 1 safari version"
-      ]
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
