@@ -251,7 +251,11 @@ function SelectButton({
                   {select[Object.keys(select)].map((item) => {
                     return (
                       <option key={item.key} value={item.key}>
-                        {item.value}
+                        {Object.keys(select[Object.keys(select)])
+                          .map((el) => +el)
+                          .indexOf(selectArr[selectParts]) === -1
+                          ? "🎉레어 요소🎉"
+                          : item.value}
                       </option>
                     );
                   })}
