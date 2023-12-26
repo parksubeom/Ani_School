@@ -59,31 +59,28 @@ function SelectButton({
     randombackground,
   ];
   /**
+   * 올 랜덤버튼을 클릭 시 , 잠김여부, 업데이트함수 , 카테고리 , 파츠 수 를 담은 배열
+   */
+  const allRandomCategory = [
+    [facelock, setRandomFace, "fece", 8],
+    [colorlock, setRandomColor, "color", 17],
+    [eyeslock, setRandomEyes, "eyes", 13],
+    [mouthlock, setRandomMouth, "mouth", 11],
+    [acclock, setRandomAcc, "acc", 30],
+    [patternlock, setRandomPattern, "parrern", 6],
+    [backgroundlock, setRandombackground, "background", 18],
+  ];
+  /**
    * 전체 요소의 랜덤한 값을 할당해주는 함수.
    * 잠금상태인지 아닌지 조건문으로 판별하여 값을 할당
    */
   const allrandomBtn = () => {
-    if (facelock) {
-      setRandomFace(Math.round(Math.random() * 8));
-    }
-    if (colorlock) {
-      setRandomColor(Math.round(Math.random() * 17));
-    }
-    if (eyeslock) {
-      setRandomEyes(Math.round(Math.random() * 13));
-    }
-    if (mouthlock) {
-      setRandomMouth(Math.round(Math.random() * 11));
-    }
-    if (acclock) {
-      setRandomAcc(Math.round(Math.random() * 30));
-    }
-    if (patternlock) {
-      setRandomPattern(Math.round(Math.random() * 6));
-    }
-    if (backgroundlock) {
-      setRandombackground(Math.round(Math.random() * 18));
-    }
+    allRandomCategory.forEach((category) => {
+      if (category[0]) {
+        return category[1](Math.round(Math.random() * category[3]));
+      }
+    });
+
     setAudio(!audio);
     setSectionFlash1(true);
     setTimeout(() => {
@@ -250,7 +247,7 @@ function SelectButton({
     }
     setTimeout(() => {
       setLockAudio(false);
-    }, 200);
+    }, 150);
   };
 
   return (
@@ -262,7 +259,6 @@ function SelectButton({
             autoPlay={audio}
           ></audio>
         ) : null}
-
         {/*랜덤버튼 리스트 */}
         <ul className="randomBtn_box">
           {randomCategory.map((category) => {
@@ -280,7 +276,6 @@ function SelectButton({
             );
           })}
         </ul>
-
         {/*선택버튼 리스트 */}
         <ul className="selectBtn_box">
           {Options.map((select) => {
@@ -323,107 +318,29 @@ function SelectButton({
             autoPlay={lockaudio}
           ></audio>
         ) : null}
+
         <ul className="lockBtn_box">
-          <li>
-            <button
-              type="button"
-              value="button"
-              className="lockBtn_Design"
-              onClick={() => randomLockBtn("face")}
-            >
-              {facelock ? (
-                <FontAwesomeIcon icon={faUnlock} />
-              ) : (
-                <FontAwesomeIcon icon={faLock} />
-              )}
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
-              value="button"
-              className="lockBtn_Design"
-              onClick={() => randomLockBtn("color")}
-            >
-              {colorlock ? (
-                <FontAwesomeIcon icon={faUnlock} />
-              ) : (
-                <FontAwesomeIcon icon={faLock} />
-              )}
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
-              value="button"
-              className="lockBtn_Design"
-              onClick={() => randomLockBtn("eyes")}
-            >
-              {eyeslock ? (
-                <FontAwesomeIcon icon={faUnlock} />
-              ) : (
-                <FontAwesomeIcon icon={faLock} />
-              )}
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
-              value="button"
-              className="lockBtn_Design"
-              onClick={() => randomLockBtn("mouth")}
-            >
-              {mouthlock ? (
-                <FontAwesomeIcon icon={faUnlock} />
-              ) : (
-                <FontAwesomeIcon icon={faLock} />
-              )}
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
-              value="button"
-              className="lockBtn_Design"
-              onClick={() => randomLockBtn("acc")}
-            >
-              {acclock ? (
-                <FontAwesomeIcon icon={faUnlock} />
-              ) : (
-                <FontAwesomeIcon icon={faLock} />
-              )}
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
-              value="button"
-              className="lockBtn_Design"
-              onClick={(e) => randomLockBtn("pattern")}
-            >
-              {patternlock ? (
-                <FontAwesomeIcon icon={faUnlock} />
-              ) : (
-                <FontAwesomeIcon icon={faLock} />
-              )}
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
-              value="button"
-              className="lockBtn_Design"
-              onClick={(e) => randomLockBtn("background")}
-            >
-              {backgroundlock ? (
-                <FontAwesomeIcon icon={faUnlock} />
-              ) : (
-                <FontAwesomeIcon icon={faLock} />
-              )}
-            </button>
-          </li>
+          {allRandomCategory.map((category) => {
+            return (
+              <li>
+                <button
+                  type="button"
+                  value="button"
+                  className="lockBtn_Design"
+                  onClick={() => randomLockBtn(category[1])}
+                >
+                  {category[0] ? (
+                    <FontAwesomeIcon icon={faUnlock} />
+                  ) : (
+                    <FontAwesomeIcon icon={faLock} />
+                  )}
+                </button>
+              </li>
+            );
+          })}
         </ul>
       </div>
+
       <input
         id="pngname"
         className="png_Name"
