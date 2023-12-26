@@ -46,8 +46,6 @@ module.exports.Options = [
       { key: 9, value: "감은눈(기본)" },
       { key: 10, value: "질끈눈" },
       { key: 11, value: "골뱅이눈" },
-      { key: 12, value: "올망눈" },
-      { key: 13, value: "흰자눈" },
     ],
   },
   {
