@@ -1,14 +1,14 @@
+//css
 import "../Style/SelectButton.css";
-import React, { useState } from "react";
+//폰트 및 아이콘
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock, faUnlock } from "@fortawesome/free-solid-svg-icons";
+//라이브러리
+import React, { useState } from "react";
 import domtoimage from "dom-to-image";
 import { saveAs } from "file-saver";
+//유틸
 const { Options } = require("./SelectData");
-//셀렉트 버튼을 누르면  온클릭이벤트가 실행되고 해당버튼에 고유한 값을 앱컴포넌트로 올려줘야한다.
-//랜덤버튼을 누르면 온클릭이벤트가 실행되고, Matr.round(Matr.rendom)*10 메서드를 실행해서 나온 정수값을 state값에 넣어준다.
-//여기서 나온 정수값은 Viewsection에서 이미지를 랜덤으로 불러오기위해 필요하기에 Viewsection으로 값을 보내줘야한다.
-//셀렉트버튼 컴포넌트는 뷰 컴포넌트의 자식컴포넌트로 들어가지 않으니까 state & props로 값을 주고받기 힘들다. => App.jsx로 값을 올려보낸다.
 
 function SelectButton({
   setRandomFace,
@@ -58,7 +58,10 @@ function SelectButton({
     randompattern,
     randombackground,
   ];
-
+  /**
+   * 전체 요소의 랜덤한 값을 할당해주는 함수.
+   * 잠금상태인지 아닌지 조건문으로 판별하여 값을 할당
+   */
   const allrandomBtn = () => {
     if (facelock) {
       setRandomFace(Math.round(Math.random() * 8));
@@ -90,71 +93,114 @@ function SelectButton({
       setAudio(false);
     }, 300);
   };
-  //==========================랜덤버튼함수==========================//
+  /**
+   * 개별 요소의 랜덤한 값을 할당해주는 함수.
+   * 레어요소인지 아닌지를 판별하여 값을 할당할지 early return할지 정한다.
+   * @param {string} category
+   */
   const randomBtn = (category) => {
-    if (category === "얼굴랜덤") {
-      setRandomFace(Math.floor(Math.random() * 8));
-    } else if (category === "컬러랜덤") {
-      if (randomcolor > 15) {
-        if (!window.confirm("✨레어컬러✨입니다. 바꾸시겠습니까?")) {
+    let randomValue;
+    switch (category) {
+      case "얼굴랜덤":
+        randomValue = Math.floor(Math.random() * 8);
+        setRandomFace(randomValue);
+        break;
+      case "컬러랜덤":
+        if (
+          randomcolor > 15 &&
+          !window.confirm("✨레어컬러✨입니다. 바꾸시겠습니까?")
+        ) {
           return;
         }
-      }
-      setRandomColor(Math.round(Math.random() * 17));
-    } else if (category === "눈랜덤") {
-      if (randomeyes > 12) {
-        if (!window.confirm("✨레어 눈✨입니다. 바꾸시겠습니까?")) {
+        randomValue = Math.round(Math.random() * 17);
+        setRandomColor(randomValue);
+        break;
+      case "눈랜덤":
+        if (
+          randomeyes > 11 &&
+          !window.confirm("✨레어 눈✨입니다. 바꾸시겠습니까?")
+        ) {
           return;
         }
-      }
-      setRandomEyes(Math.round(Math.random() * (13 - 1) + 1));
-    } else if (category === "입랜덤") {
-      if (randommouth > 8) {
-        if (!window.confirm("✨레어 입✨입니다. 바꾸시겠습니까?")) {
+        randomValue = Math.round(Math.random() * 13);
+        setRandomEyes(randomValue);
+        break;
+      case "입랜덤":
+        if (
+          randommouth > 10 &&
+          !window.confirm("✨레어 입✨입니다. 바꾸시겠습니까?")
+        ) {
           return;
         }
-      }
-      setRandomMouth(Math.round(Math.random() * 11));
-    } else if (category === "악세랜덤") {
-      setRandomAcc(Math.round(Math.random() * (30 - 1)) + 1);
-    } else if (category === "무늬랜덤") {
-      setRandomPattern(Math.round(Math.random() * (6 - 1)) + 1);
-    } else if (category === "배경랜덤") {
-      if (randombackground > 12) {
-        if (!window.confirm("✨레어 배경✨입니다. 바꾸시겠습니까?")) {
+        randomValue = Math.round(Math.random() * 11);
+        setRandomMouth(randomValue);
+        break;
+      case "악세랜덤":
+        randomValue = Math.round(Math.random() * 30);
+        setRandomAcc(randomValue);
+        break;
+      case "무늬랜덤":
+        randomValue = Math.round(Math.random() * 6);
+        setRandomPattern(randomValue);
+        break;
+      case "배경랜덤":
+        if (
+          randombackground > 12 &&
+          !window.confirm("✨레어 배경✨입니다. 바꾸시겠습니까?")
+        ) {
           return;
         }
-      }
-      setRandombackground(Math.round(Math.random() * (19 - 1)) + 1);
+        randomValue = Math.round(Math.random() * 18);
+        setRandombackground(randomValue);
+        break;
+      default:
+        // 다른 경우에 대한 처리
+        break;
     }
+
     setAudio(!audio);
     setTimeout(() => {
       setAudio(false);
     }, 500);
   };
-  //==========================셀렉버튼함수==========================//
-  const SelectBtn = (e, setSelect) => {
-    if (setSelect === "faceselect") {
-      setRandomFace(Number(e.target.value));
-    } else if (setSelect === "colorselect") {
-      setRandomColor(Number(e.target.value));
-    } else if (setSelect === "eyesselect") {
-      setRandomEyes(Number(e.target.value));
-    } else if (setSelect === "mouthselect") {
-      setRandomMouth(Number(e.target.value));
-    } else if (setSelect === "accselect") {
-      setRandomAcc(Number(e.target.value));
-    } else if (setSelect === "patternselect") {
-      setRandomPattern(Number(e.target.value));
-    } else if (setSelect === "backgroundselect") {
-      setRandombackground(Number(e.target.value));
+
+  /**
+   * 선택한 파츠 요소의 값을 사용자가 선택한 값으로 변경해주는 함수.
+   * @param {number}value
+   * @param {string}setSelect
+   */
+  const SelectBtn = (value, setSelect) => {
+    switch (setSelect) {
+      case "faceselect":
+        setRandomFace(Number(value));
+        break;
+      case "colorselect":
+        setRandomColor(Number(value));
+        break;
+      case "eyesselect":
+        setRandomEyes(Number(value));
+        break;
+      case "mouthselect":
+        setRandomMouth(Number(value));
+        break;
+      case "accselect":
+        setRandomAcc(Number(value));
+        break;
+      case "patternselect":
+        setRandomPattern(Number(value));
+        break;
+      case "backgroundselect":
+        setRandombackground(Number(value));
+        break;
+      default:
+        // 다른 경우에 대한 처리
+        break;
     }
   };
-  //==========================png파일명 생성 함수==========================//
-  const pngnameHandler = (e) => {
-    setPngName(e.target.value);
-  };
-  //==========================캐릭터내려받기 함수 및 플래쉬==========================//
+  /**
+   * 현재 view 섹션에 만들어 진 프로필 이미지를 사용자의 디바이스로 출력하는 함수.
+   * png파일의 이름, view섹션의 이미지를 사용자 디바이스로 출력 후 플래시효과를 보여주고 파일제목란을 비워준다.
+   */
   const onDownloadBtn = () => {
     setDownload(!download);
     let filename = pngname ? pngname : "프로필";
@@ -170,23 +216,37 @@ function SelectButton({
     }, 1000);
     setPngName("");
   };
-  //==========================올랜덤 잠금버튼 함수==========================//
-  const randomLockBtn = (e, locktype) => {
+  /**
+   * 원하는 요소가 나올 시 해당요소를 잠금하는 함수
+   * 랜덤 또는 올랜덤 버튼을 눌러도 잠긴요소는 값이 바뀌지않는다.
+   * @param {string}locktype
+   */
+  const randomLockBtn = (locktype) => {
     setLockAudio(!lockaudio);
-    if (locktype === "face") {
-      setFaceLock(!facelock);
-    } else if (locktype === "color") {
-      setColorLock(!colorlock);
-    } else if (locktype === "eyes") {
-      setEyesLock(!eyeslock);
-    } else if (locktype === "mouth") {
-      setMouthLock(!mouthlock);
-    } else if (locktype === "acc") {
-      setAccLock(!acclock);
-    } else if (locktype === "pattern") {
-      setPatternLock(!patternlock);
-    } else if (locktype === "background") {
-      setBackgroundLock(!backgroundlock);
+    switch (locktype) {
+      case "face":
+        setFaceLock(!facelock);
+        break;
+      case "color":
+        setColorLock(!colorlock);
+        break;
+      case "eyes":
+        setEyesLock(!eyeslock);
+        break;
+      case "mouth":
+        setMouthLock(!mouthlock);
+        break;
+      case "acc":
+        setAccLock(!acclock);
+        break;
+      case "pattern":
+        setPatternLock(!patternlock);
+        break;
+      case "background":
+        setBackgroundLock(!backgroundlock);
+        break;
+      default:
+        break;
     }
     setTimeout(() => {
       setLockAudio(false);
@@ -220,45 +280,37 @@ function SelectButton({
             );
           })}
         </ul>
-        {/*
-        <select
-              className="selectBtn_Design"
-              onChange={(event) => SelectBtn(event, "background")}
-              value={randombackground}
-            >
-              {randombackground > 12 ? <option>🎉레어 배경🎉</option> : null}
-              {backgroundOptions.backgroundselect.map((item) => (
-                <option key={item.key} value={item.key}>
-                  {item.value}
-                </option>
-              ))}
-            </select>
-                  //selectParts가 1,2,3,6 이라면 if문으로 쪼개서 분기해준다.
-            */}
 
         {/*선택버튼 리스트 */}
         <ul className="selectBtn_box">
           {Options.map((select) => {
             let selectParts = Number(Options.indexOf(select));
-            console.log(selectArr[selectParts]);
             return (
               <li>
                 <select
                   className="selectBtn_Design"
-                  onChange={(event) => SelectBtn(event, Object.keys(select)[0])}
+                  onChange={(event) =>
+                    SelectBtn(event.target.value, Object.keys(select)[0])
+                  }
                   value={selectArr[selectParts]}
                 >
-                  {select[Object.keys(select)].map((item) => {
-                    return (
-                      <option key={item.key} value={item.key}>
-                        {Object.keys(select[Object.keys(select)])
-                          .map((el) => +el)
-                          .indexOf(selectArr[selectParts]) === -1
-                          ? "🎉레어 요소🎉"
-                          : item.value}
-                      </option>
-                    );
-                  })}
+                  {Object.keys(select[Object.keys(select)])
+                    .map((el) => +el)
+                    .includes(selectArr[selectParts]) ? (
+                    select[Object.keys(select)].map((item) => {
+                      return (
+                        <option key={item.key} value={item.key}>
+                          {Object.keys(select[Object.keys(select)])
+                            .map((el) => +el)
+                            .includes(selectArr[selectParts])
+                            ? item.value
+                            : "🎉레어 요소🎉"}
+                        </option>
+                      );
+                    })
+                  ) : (
+                    <option value={"🎉레어 요소🎉"}>{"🎉레어 요소🎉"}</option>
+                  )}
                 </select>
               </li>
             );
@@ -277,7 +329,7 @@ function SelectButton({
               type="button"
               value="button"
               className="lockBtn_Design"
-              onClick={(e) => randomLockBtn(e, "face")}
+              onClick={() => randomLockBtn("face")}
             >
               {facelock ? (
                 <FontAwesomeIcon icon={faUnlock} />
@@ -291,7 +343,7 @@ function SelectButton({
               type="button"
               value="button"
               className="lockBtn_Design"
-              onClick={(e) => randomLockBtn(e, "color")}
+              onClick={() => randomLockBtn("color")}
             >
               {colorlock ? (
                 <FontAwesomeIcon icon={faUnlock} />
@@ -305,7 +357,7 @@ function SelectButton({
               type="button"
               value="button"
               className="lockBtn_Design"
-              onClick={(e) => randomLockBtn(e, "eyes")}
+              onClick={() => randomLockBtn("eyes")}
             >
               {eyeslock ? (
                 <FontAwesomeIcon icon={faUnlock} />
@@ -319,7 +371,7 @@ function SelectButton({
               type="button"
               value="button"
               className="lockBtn_Design"
-              onClick={(e) => randomLockBtn(e, "mouth")}
+              onClick={() => randomLockBtn("mouth")}
             >
               {mouthlock ? (
                 <FontAwesomeIcon icon={faUnlock} />
@@ -333,7 +385,7 @@ function SelectButton({
               type="button"
               value="button"
               className="lockBtn_Design"
-              onClick={(e) => randomLockBtn(e, "acc")}
+              onClick={() => randomLockBtn("acc")}
             >
               {acclock ? (
                 <FontAwesomeIcon icon={faUnlock} />
@@ -347,7 +399,7 @@ function SelectButton({
               type="button"
               value="button"
               className="lockBtn_Design"
-              onClick={(e) => randomLockBtn(e, "pattern")}
+              onClick={(e) => randomLockBtn("pattern")}
             >
               {patternlock ? (
                 <FontAwesomeIcon icon={faUnlock} />
@@ -361,7 +413,7 @@ function SelectButton({
               type="button"
               value="button"
               className="lockBtn_Design"
-              onClick={(e) => randomLockBtn(e, "background")}
+              onClick={(e) => randomLockBtn("background")}
             >
               {backgroundlock ? (
                 <FontAwesomeIcon icon={faUnlock} />
@@ -377,7 +429,7 @@ function SelectButton({
         className="png_Name"
         placeholder="저장 할 이름 작성"
         value={pngname}
-        onChange={(e) => pngnameHandler(e)}
+        onChange={(e) => setPngName(e.target.value)}
       ></input>
       {download ? (
         <audio
