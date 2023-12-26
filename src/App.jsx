@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
 import Manual from "./component/Manual.jsx";
 import Profile from "component/Profile";
@@ -6,14 +6,6 @@ import ViewSection from "./component/ViewSection.jsx";
 
 function App() {
   //App컴포넌트는 각 컴포넌트로 부터 값을 받아와서 다시 뿌려주는 허브역할을 해야한다.
-  const [randomface, setRandomFace] = useState(5);
-  const [randomcolor, setRandomColor] = useState(2);
-  const [randomeyes, setRandomEyes] = useState(3);
-  const [randommouth, setRandomMouth] = useState(10);
-  const [randomacc, setRandomAcc] = useState(19);
-  const [randompattern, setRandomPattern] = useState(6);
-  const [randombackground, setRandombackground] = useState(11);
-  const [sectionflash, setSectionFlash1] = useState(false);
 
   return (
     <section className="App">
@@ -25,17 +17,7 @@ function App() {
           <li className="Pattern pbottom-left"></li>
           <li className="Pattern pbottom-right"></li>
         </ul>
-        <ViewSection
-          randomface={randomface}
-          randomcolor={randomcolor}
-          randomeyes={randomeyes}
-          randommouth={randommouth}
-          randomacc={randomacc}
-          randompattern={randompattern}
-          randombackground={randombackground}
-          sectionflash={sectionflash}
-          className="viewSection"
-        />
+        <ViewSection className="viewSection" />
         <footer>
           <p>
             본 프로젝트는 수범,주비의 공동작품입니다.
@@ -49,23 +31,7 @@ function App() {
       <article className="btnAllGroup__">
         <Manual />
         <div className="profileGroup__">
-          <Profile
-            setRandomFace={setRandomFace}
-            setRandomColor={setRandomColor}
-            setRandomEyes={setRandomEyes}
-            setRandomMouth={setRandomMouth}
-            setRandomAcc={setRandomAcc}
-            setRandomPattern={setRandomPattern}
-            setRandombackground={setRandombackground}
-            randomface={randomface}
-            randomcolor={randomcolor}
-            randomeyes={randomeyes}
-            randommouth={randommouth}
-            randomacc={randomacc}
-            randompattern={randompattern}
-            randombackground={randombackground}
-            setSectionFlash1={setSectionFlash1}
-          />
+          <Profile />
         </div>
       </article>
     </section>

@@ -1,17 +1,27 @@
 import React from "react";
 import "../Style/ViewSection.css";
 import Title from "../component/Title.jsx";
+import { useRecoilState, useSetRecoilState } from "recoil";
+import {
+  randomFace,
+  randomColor,
+  randomEyes,
+  randomMouth,
+  randomAcc,
+  randomPattern,
+  randomBackground,
+  sectionFlash,
+} from "/Users/user/Ani_School-1/src/recoil/Atoms.ts";
 
-function ViewSection({
-  randomface,
-  randomcolor,
-  randomeyes,
-  randommouth,
-  randomacc,
-  randompattern,
-  randombackground,
-  sectionflash,
-}) {
+function ViewSection() {
+  const [randomface] = useRecoilState(randomFace);
+  const [randomcolor] = useRecoilState(randomColor);
+  const [randomeyes] = useRecoilState(randomEyes);
+  const [randommouth] = useRecoilState(randomMouth);
+  const [randomacc] = useRecoilState(randomAcc);
+  const [randompattern] = useRecoilState(randomPattern);
+  const [randombackground] = useRecoilState(randomBackground);
+  const [sectionflash] = useRecoilState(sectionFlash);
   let backgroundurl = `https://anischool.s3.ap-northeast-2.amazonaws.com/img/background/background${randombackground}.png`;
   let faceurl = `https://anischool.s3.ap-northeast-2.amazonaws.com/img/face/face${randomface}/color${randomcolor}.png`;
   let eyesurl = `https://anischool.s3.ap-northeast-2.amazonaws.com/img/eye/eye${randomeyes}.png`;

@@ -8,25 +8,29 @@ import React, { useState } from "react";
 import domtoimage from "dom-to-image";
 import { saveAs } from "file-saver";
 //유틸
+import { useRecoilState, useSetRecoilState } from "recoil";
+import {
+  randomFace,
+  randomColor,
+  randomEyes,
+  randomMouth,
+  randomAcc,
+  randomPattern,
+  randomBackground,
+  sectionFlash,
+} from "/Users/user/Ani_School-1/src/recoil/Atoms.ts";
 const { Options } = require("./SelectData");
 
-function SelectButton({
-  setRandomFace,
-  setRandomColor,
-  setRandomEyes,
-  setRandomMouth,
-  setRandomAcc,
-  setRandomPattern,
-  setRandombackground,
-  randomface,
-  randomcolor,
-  randomeyes,
-  randommouth,
-  randomacc,
-  randompattern,
-  randombackground,
-  setSectionFlash1,
-}) {
+function SelectButton() {
+  const [randomface, setRandomFace] = useRecoilState(randomFace);
+  const [randomcolor, setRandomColor] = useRecoilState(randomColor);
+  const [randomeyes, setRandomEyes] = useRecoilState(randomEyes);
+  const [randommouth, setRandomMouth] = useRecoilState(randomMouth);
+  const [randomacc, setRandomAcc] = useRecoilState(randomAcc);
+  const [randompattern, setRandomPattern] = useRecoilState(randomPattern);
+  const [randombackground, setRandombackground] =
+    useRecoilState(randomBackground);
+  const setSectionFlash1 = useSetRecoilState(sectionFlash);
   const [lockaudio, setLockAudio] = useState(false);
   const [audio, setAudio] = useState(false);
   const [flash, setFlash] = useState(false);
@@ -261,9 +265,9 @@ function SelectButton({
         ) : null}
         {/*랜덤버튼 리스트 */}
         <ul className="randomBtn_box">
-          {randomCategory.map((category) => {
+          {randomCategory.map((category, idx) => {
             return (
-              <li>
+              <li key={idx}>
                 <button
                   type="button"
                   value="button"
@@ -278,10 +282,10 @@ function SelectButton({
         </ul>
         {/*선택버튼 리스트 */}
         <ul className="selectBtn_box">
-          {Options.map((select) => {
+          {Options.map((select, idx) => {
             let selectParts = Number(Options.indexOf(select));
             return (
-              <li>
+              <li key={idx}>
                 <select
                   className="selectBtn_Design"
                   onChange={(event) =>
@@ -294,7 +298,7 @@ function SelectButton({
                     .includes(selectArr[selectParts]) ? (
                     select[Object.keys(select)].map((item) => {
                       return (
-                        <option key={item.key} value={item.key}>
+                        <option key={item.key ?? "unique-key"} value={item.key}>
                           {Object.keys(select[Object.keys(select)])
                             .map((el) => +el)
                             .includes(selectArr[selectParts])
@@ -304,7 +308,9 @@ function SelectButton({
                       );
                     })
                   ) : (
-                    <option value={"🎉레어 요소🎉"}>{"🎉레어 요소🎉"}</option>
+                    <option key={"unique-key"} value={"🎉레어 요소🎉"}>
+                      {"🎉레어 요소🎉"}
+                    </option>
                   )}
                 </select>
               </li>
@@ -320,9 +326,9 @@ function SelectButton({
         ) : null}
 
         <ul className="lockBtn_box">
-          {allRandomCategory.map((category) => {
+          {allRandomCategory.map((category, idx) => {
             return (
-              <li>
+              <li key={idx}>
                 <button
                   type="button"
                   value="button"
