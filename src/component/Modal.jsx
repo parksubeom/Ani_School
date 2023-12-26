@@ -21,7 +21,11 @@ function Modal({ handleOnClick }) {
         <div className="modal_totalview">
           {/*모달 탑뷰*/}
           <div className="modal_topview">
-            <img className="logo_img" src="https://i.imgur.com/iLtMaIJ.png" />
+            <img
+              className="logo_img"
+              alt=""
+              src="https://i.imgur.com/iLtMaIJ.png"
+            />
             <p className="modal_text">
               자신의 개성을 보여 줄 나만의 친구들을 가지고싶지 않나요?
               ANISCHOOL은 다양하고 귀여운 나만의 애니콘을 자신만의 개성으로 직접
@@ -42,7 +46,11 @@ function Modal({ handleOnClick }) {
           </div>
           <div className="modal_bottomview">
             {/*모달 바텀뷰*/}
-            <img className="logo_img2" src="https://i.imgur.com/c74otaA.png" />
+            <img
+              className="logo_img2"
+              alt=""
+              src="https://i.imgur.com/c74otaA.png"
+            />
             <p className="textcolor modal_text">
               랜덤버튼에는 셀렉버튼에는 없는 ✨레어✨
               <br />
