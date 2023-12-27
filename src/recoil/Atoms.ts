@@ -32,3 +32,31 @@ export const sectionFlash = atom<boolean>({
   key: "sectionFlash",
   default: false,
 });
+export const facelock = atom<boolean>({
+  key: "facelock",
+  default: true,
+});
+export const colorlock = atom<boolean>({
+  key: "colorlock",
+  default: true,
+});
+export const eyeslock = atom<boolean>({
+  key: "eyeslock",
+  default: true,
+});
+export const mouthlock = atom<boolean>({
+  key: "mouthlock",
+  default: true,
+});
+export const acclock = atom<boolean>({
+  key: "acclock",
+  default: true,
+});
+export const patternlock = atom<boolean>({
+  key: "spatternlock",
+  default: true,
+});
+export const backgroundlock = atom<boolean>({
+  key: "spatternlock",
+  default: true,
+});
