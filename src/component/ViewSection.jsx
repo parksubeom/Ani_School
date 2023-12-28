@@ -35,22 +35,22 @@ function ViewSection() {
           <div className="capture-box">
             {sectionflash ? <div className="flash1"></div> : null}
             <div className="animal_Img">
-              <img alt="배경 이미지" src={backgroundurl} />
+              <img loading="lazy" alt="배경 이미지" src={backgroundurl} />
             </div>
             <div className="animal_Img">
-              <img alt="얼굴 이미지" src={faceurl} />
+              <img loading="lazy" alt="얼굴 이미지" src={faceurl} />
             </div>
             <div className="animal_Img">
-              <img alt="무늬 이미지" src={patternurl} />
+              <img loading="lazy" alt="무늬 이미지" src={patternurl} />
             </div>
             <div className="animal_Img">
-              <img alt="눈 이미지" src={eyesurl} />
+              <img loading="lazy" alt="눈 이미지" src={eyesurl} />
             </div>
             <div className="animal_Img">
-              <img alt="입 이미지" src={mouthurl} />
+              <img loading="lazy" alt="입 이미지" src={mouthurl} />
             </div>
             <div className="animal_Img">
-              <img alt="악세서리 이미지" src={accurl} />
+              <img loading="lazy" alt="악세서리 이미지" src={accurl} />
             </div>
           </div>
         </div>
