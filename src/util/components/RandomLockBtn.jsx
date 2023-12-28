@@ -1,4 +1,3 @@
-import React from "react";
 //폰트 및 아이콘
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock, faUnlock } from "@fortawesome/free-solid-svg-icons";

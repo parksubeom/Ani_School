@@ -2,7 +2,7 @@
 import "../Style/SelectButton.css";
 
 //라이브러리
-import React, { useState } from "react";
+import { useState } from "react";
 import domtoimage from "dom-to-image";
 import { saveAs } from "file-saver";
 //유틸

@@ -1,5 +1,4 @@
 import { useRecoilState, useSetRecoilState } from "recoil";
-import React from "react";
 import {
   randomFace,
   randomColor,

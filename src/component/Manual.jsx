@@ -1,5 +1,5 @@
 import "../Style/Manual.css";
-import React, { useState } from "react";
+import { useState } from "react";
 import Modal from "./Modal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
