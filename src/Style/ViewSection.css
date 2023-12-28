@@ -29,17 +29,17 @@
 
 .animal_Img {
   position: absolute;
-  width: 100%;
-  height: auto;
+  width: 250px;
+  height: 250px;
+}
+.animal_Img > img {
+  position: absolute;
+  width: 250px;
+  height: 250px;
 }
 
 .capture-box {
   position: relative;
   width: 250px;
   height: 250px;
-}
-
-img {
-  width: 100%;
-  vertical-align: bottom;
 }
