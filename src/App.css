@@ -8,6 +8,9 @@
 @font-face {
   font-family: "cookie";
   src: url("../public/CookieRunFont_TTF/CookieRun Black.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 * {
