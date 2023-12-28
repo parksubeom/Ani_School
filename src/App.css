@@ -2,12 +2,12 @@
 
 @font-face {
   font-family: "maple";
-  src: url("../public/maplestory\ Bold.ttf") format("truetype");
+  src: url("../public/Maplestory\ Bold.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "cookie";
-  src: url("../public/cookieRunFont_TTF/cookieRun Black.ttf") format("truetype");
+  src: url("../public/CookieRunFont_TTF/CookieRun Black.ttf") format("truetype");
 }
 
 * {

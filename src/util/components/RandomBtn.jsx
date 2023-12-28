@@ -103,6 +103,7 @@ export const RandomBtn = ({ setAudio, audio }) => {
         return (
           <li key={idx}>
             <button
+              aria-label="랜덤버튼"
               type="button"
               value="button"
               className="randomBtn_Design"

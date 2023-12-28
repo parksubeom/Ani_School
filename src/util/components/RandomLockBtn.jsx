@@ -70,10 +70,10 @@ export const RandomLockBtn = ({ setLockAudio, lockaudio }) => {
   return (
     <ul className="lockBtn_box">
       {allRandomCategory.map((category, idx) => {
-        console.log(category[0]);
         return (
           <li key={idx}>
             <button
+              aria-label="잠금버튼"
               type="button"
               value="button"
               className="lockBtn_Design"

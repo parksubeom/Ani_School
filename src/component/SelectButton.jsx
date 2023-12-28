@@ -70,11 +70,9 @@ function SelectButton() {
   const onDownloadBtn = () => {
     setDownload(!download);
     let filename = pngname ? pngname : "프로필";
-    domtoimage
-      .toBlob(document.querySelector(".capture-box-max"))
-      .then((blob) => {
-        saveAs(blob, `${filename}.png`);
-      });
+    domtoimage.toBlob(document.querySelector(".capture-box")).then((blob) => {
+      saveAs(blob, `${filename}.png`);
+    });
     setFlash(true);
     setTimeout(() => {
       setDownload(false);
@@ -122,6 +120,7 @@ function SelectButton() {
       <ul className="lastBtn_Box">
         <li>
           <button
+            aria-label="전체랜덤버튼"
             type="button"
             value="button"
             className="AllRandomBtn_Design"
@@ -137,6 +136,7 @@ function SelectButton() {
         </li>
         <li>
           <button
+            aria-label="프로필 생성 ㄴ버튼"
             type="button"
             value="button"
             className="CreateProfile_Design"

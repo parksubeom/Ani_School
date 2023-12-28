@@ -53,10 +53,10 @@ export const acclock = atom<boolean>({
   default: true,
 });
 export const patternlock = atom<boolean>({
-  key: "spatternlock",
+  key: "patternlock",
   default: true,
 });
 export const backgroundlock = atom<boolean>({
-  key: "spatternlock",
+  key: "backgroundlock",
   default: true,
 });

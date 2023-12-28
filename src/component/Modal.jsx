@@ -1,7 +1,7 @@
 import React from "react";
 import "../Style/Modal.css";
 
-function Modal({ handleOnClick }) {
+function Modal({ handleModal }) {
   return (
     <div className="modal_section">
       {/*모달 백그라운드*/}
@@ -14,7 +14,7 @@ function Modal({ handleOnClick }) {
           <li className="modalPattern mbottom-right"></li>
         </ul>
         <div className="modal_icon"></div> {/*모달 상단 범 아이콘*/}
-        <button className="exit_button" onClick={handleOnClick}>
+        <button className="exit_button" onClick={handleModal}>
           ×
         </button>
         {/*모달 닫기버튼*/}
@@ -23,7 +23,7 @@ function Modal({ handleOnClick }) {
           <div className="modal_topview">
             <img
               className="logo_img"
-              alt=""
+              alt="로고"
               src="https://i.imgur.com/iLtMaIJ.png"
             />
             <p className="modal_text">
@@ -48,7 +48,7 @@ function Modal({ handleOnClick }) {
             {/*모달 바텀뷰*/}
             <img
               className="logo_img2"
-              alt=""
+              alt="버튼 종류"
               src="https://i.imgur.com/c74otaA.png"
             />
             <p className="textcolor modal_text">
