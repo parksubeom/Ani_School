@@ -29,6 +29,8 @@
 
 .animal_Img {
   position: absolute;
+  width: 100%;
+  height: auto;
 }
 
 .capture-box {
