@@ -7,7 +7,7 @@ import {
   randomAcc,
   randomPattern,
   randomBackground,
-} from "/Users/user/Ani_School-1/src/recoil/Atoms.ts";
+} from "../../recoil/Atoms.ts";
 
 export const RandomBtn = ({ setAudio, audio }) => {
   const randomCategory = [
@@ -102,11 +102,11 @@ export const RandomBtn = ({ setAudio, audio }) => {
         return (
           <li key={idx}>
             <button
-              aria-label="랜덤버튼"
+              aria-label={category}
               type="button"
               value="button"
               className="randomBtn_Design"
-              onClick={() => randomBtn(`${category}`, setAudio, audio)}
+              onClick={() => randomBtn(category, setAudio, audio)}
             >
               {category}
             </button>

@@ -7,7 +7,7 @@ import {
   randomAcc,
   randomPattern,
   randomBackground,
-} from "/Users/user/Ani_School-1/src/recoil/Atoms.ts";
+} from "../../recoil/Atoms.ts";
 import { Options } from "data/SelectData";
 export const SelectBtn = () => {
   const [randomface, setRandomFace] = useRecoilState(randomFace);
@@ -67,6 +67,7 @@ export const SelectBtn = () => {
         return (
           <li key={idx}>
             <select
+              aria-label={select[Object.keys(select)][idx].value}
               className="selectBtn_Design"
               onChange={(event) =>
                 selectBtn(event.target.value, Object.keys(select)[0])
