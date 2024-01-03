@@ -1,9 +1,9 @@
-import React from "react";
+import { lazy, Suspense } from "react";
 import "./App.css";
 import Manual from "./component/Manual.jsx";
 import Profile from "component/Profile";
-import ViewSection from "./component/ViewSection.jsx";
-
+const ViewSection = lazy(() => import("component/ViewSection"));
+//yeongchan1228.tistory.com/128 [Dev-Logs:티스토리]
 function App() {
   //App컴포넌트는 각 컴포넌트로 부터 값을 받아와서 다시 뿌려주는 허브역할을 해야한다.
 
