@@ -27,7 +27,7 @@ import {
   acclock,
   patternlock,
   backgroundlock,
-} from "/Users/user/Ani_School-1/src/recoil/Atoms.ts";
+} from "../recoil/Atoms.ts";
 
 function SelectButton() {
   const setRandomFace = useSetRecoilState(randomFace);
@@ -120,7 +120,7 @@ function SelectButton() {
       <ul className="lastBtn_Box">
         <li>
           <button
-            aria-label="전체랜덤버튼"
+            aria-label="올 랜덤"
             type="button"
             value="button"
             className="AllRandomBtn_Design"
@@ -136,7 +136,7 @@ function SelectButton() {
         </li>
         <li>
           <button
-            aria-label="프로필 생성 ㄴ버튼"
+            aria-label="프로필생성"
             type="button"
             value="button"
             className="CreateProfile_Design"

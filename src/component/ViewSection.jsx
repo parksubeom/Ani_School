@@ -1,3 +1,4 @@
+import React, { lazy, Suspense } from "react";
 import "../Style/ViewSection.css";
 import Title from "../component/Title.jsx";
 import { useRecoilState } from "recoil";
@@ -12,6 +13,7 @@ import {
   sectionFlash,
 } from "../recoil/Atoms.ts";
 
+const LazyImage = lazy(() => import("./LazyImage"));
 function ViewSection() {
   const [randomface] = useRecoilState(randomFace);
   const [randomcolor] = useRecoilState(randomColor);
@@ -27,6 +29,14 @@ function ViewSection() {
   let mouthurl = `https://anischool.s3.ap-northeast-2.amazonaws.com/img/mouth/mouth${randommouth}.png`;
   let accurl = `https://anischool.s3.ap-northeast-2.amazonaws.com/img/acc/acc${randomacc}.png`;
   let patternurl = `https://anischool.s3.ap-northeast-2.amazonaws.com/img/pattern/pattern${randompattern}.png`;
+  const srcArr = [
+    [backgroundurl, "배경 이미지"],
+    [faceurl, "얼굴 이미지"],
+    [eyesurl, "눈 이미지"],
+    [mouthurl, "입 이미지"],
+    [accurl, "악세서리 이미지"],
+    [patternurl, "무늬 이미지"],
+  ];
 
   return (
     <div>
@@ -34,60 +44,20 @@ function ViewSection() {
         <div className="viewImg_box anicon ">
           <div className="capture-box">
             {sectionflash ? <div className="flash1"></div> : null}
-            <div className="animal_Img">
-              <img
-                loading="lazy"
-                width="250"
-                height="250"
-                alt="배경 이미지"
-                src={backgroundurl}
-              />
-            </div>
-            <div className="animal_Img">
-              <img
-                loading="lazy"
-                width="250"
-                height="250"
-                alt="얼굴 이미지"
-                src={faceurl}
-              />
-            </div>
-            <div className="animal_Img">
-              <img
-                loading="lazy"
-                width="250"
-                height="250"
-                alt="무늬 이미지"
-                src={patternurl}
-              />
-            </div>
-            <div className="animal_Img">
-              <img
-                loading="lazy"
-                width="250"
-                height="250"
-                alt="눈 이미지"
-                src={eyesurl}
-              />
-            </div>
-            <div className="animal_Img">
-              <img
-                loading="lazy"
-                width="250"
-                height="250"
-                alt="입 이미지"
-                src={mouthurl}
-              />
-            </div>
-            <div className="animal_Img">
-              <img
-                loading="lazy"
-                width="250"
-                height="250"
-                alt="악세서리 이미지"
-                src={accurl}
-              />
-            </div>
+            {srcArr.map((partsSrc, idx) => {
+              return (
+                <div className="animal_Img" key={idx}>
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <LazyImage
+                      width="250"
+                      height="250"
+                      alt={partsSrc[1]}
+                      src={partsSrc[0]}
+                    />
+                  </Suspense>
+                </div>
+              );
+            })}
           </div>
         </div>
         <Title />

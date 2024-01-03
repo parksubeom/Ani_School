@@ -8,24 +8,25 @@
     width: 100%;
     height: 100%;
 }
-.btn_allBox>div{
+
+.btn_allBox>div {
     display: flex;
     flex-direction: row;
 }
 
-.randomBtn_box>li{
+.randomBtn_box>li {
     width: 70px;
     height: 30px;
     margin: 0px 10px 10px 0px;
 }
 
-.selectBtn_box>li{
+.selectBtn_box>li {
     width: 160px;
     height: 30px;
     margin-bottom: 10px;
 }
 
-.lockBtn_Design>li{
+.lockBtn_Design>li {
     width: 10px;
     height: 30px;
     margin-bottom: 10px;
@@ -107,18 +108,22 @@
 
 /*-------------------------------------------------------*/
 
-.lastBtn_Box{
+.lastBtn_Box {
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin-top: 10px;
 }
-.lastBtn_Box > li{
+
+.lastBtn_Box>li {
     width: 110px;
     height: 30px;
 }
-.lastBtn_Box > li:nth-child(1){margin-right: 15px;}
+
+.lastBtn_Box>li:nth-child(1) {
+    margin-right: 15px;
+}
 
 
 .AllRandomBtn_Design {
@@ -174,16 +179,19 @@
 }
 
 
-.flash{
+.flash {
     position: fixed;
     width: 100%;
     height: 100%;
-    top:0px;
+    top: 0px;
     left: 0px;
     z-index: 99;
     animation: opacity 1s forwards;
 }
 
 @keyframes opacity {
-    50%{background-color: #fff; opacity: 0.9;}
+    50% {
+        background-color: #fff;
+        opacity: 0.9;
+    }
 }

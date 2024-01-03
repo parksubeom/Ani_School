@@ -10,7 +10,7 @@ import {
   acclock,
   patternlock,
   backgroundlock,
-} from "/Users/user/Ani_School-1/src/recoil/Atoms.ts";
+} from "../../recoil/Atoms.ts";
 
 export const RandomLockBtn = ({ setLockAudio, lockaudio }) => {
   const [faceLock, setFaceLock] = useRecoilState(facelock);
