@@ -60,7 +60,7 @@ function Manual() {
         >
           <div className="sideBtn_Design">
             <div className="shake sideBtn_text">
-              <FontAwesomeIcon icon={faBell} />
+              <FontAwesomeIcon aria-label="가이드 창 열기" icon={faBell} />
             </div>
           </div>
         </button>
@@ -77,7 +77,10 @@ function Manual() {
         >
           <div className="sideBtn_Design">
             <div className="sideBtn_text">
-              <FontAwesomeIcon icon={faListCheck} />
+              <FontAwesomeIcon
+                aria-label="외부페이지 이동"
+                icon={faListCheck}
+              />
             </div>
           </div>
         </a>
@@ -91,7 +94,7 @@ function Manual() {
           <div
             className={audio ? "iconON sideBtn_text" : "iconOFF sideBtn_text"}
           >
-            <FontAwesomeIcon icon={faMusic} />
+            <FontAwesomeIcon aria-label="오디오" icon={faMusic} />
           </div>
         </div>
       </button>
