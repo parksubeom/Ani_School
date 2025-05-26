@@ -12,7 +12,7 @@ import {
   backgroundlock,
 } from "../../recoil/Atoms.ts";
 
-export const RandomLockBtn = ({ setLockAudio, lockaudio }) => {
+export const RandomLockBtn = ({ setLockAudio, lockaudio,lockIndex }) => {
   const [faceLock, setFaceLock] = useRecoilState(facelock);
   const [colorLock, setColorLock] = useRecoilState(colorlock);
   const [eyesLock, setEyesLock] = useRecoilState(eyeslock);
@@ -36,27 +36,28 @@ export const RandomLockBtn = ({ setLockAudio, lockaudio }) => {
    * @param {string}locktype
    */
   const randomLockBtn = (locktype) => {
+    console.log(locktype)
     setLockAudio(!lockaudio);
     switch (locktype) {
-      case "face":
+      case 0:
         setFaceLock(!faceLock);
         break;
-      case "color":
+      case 1:
         setColorLock(!colorLock);
         break;
-      case "eyes":
+      case 2:
         setEyesLock(!eyesLock);
         break;
-      case "mouth":
+      case 3:
         setMouthLock(!mouthLock);
         break;
-      case "acc":
+      case 4:
         setAccLock(!accLock);
         break;
-      case "pattern":
+      case 5:
         setPatternLock(!patternLock);
         break;
-      case "background":
+      case 6:
         setBackgroundLock(!backgroundLock);
         break;
       default:
@@ -72,9 +73,9 @@ export const RandomLockBtn = ({ setLockAudio, lockaudio }) => {
               type="button"
               value="button"
               className="lockBtn_Design"
-              onClick={() => randomLockBtn("face")}
+              onClick={() => randomLockBtn(lockIndex)}
             >
-              {faceLock ? (
+              {allRandomCategory[lockIndex][0] ? (
                 <FontAwesomeIcon icon={faUnlock} />
               ) : (
                 <FontAwesomeIcon icon={faLock} />

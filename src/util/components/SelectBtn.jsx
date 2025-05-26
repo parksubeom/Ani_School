@@ -104,7 +104,7 @@ export const SelectBtn = () => {
           ></audio>
         ) : null}
             {/*잠금버튼 리스트 */}
-            <RandomLockBtn setLockAudio={setLockAudio} lockaudio={lockaudio} />
+            <RandomLockBtn setLockAudio={setLockAudio} lockaudio={lockaudio} lockIndex={idx}/>
           </li>
         );
       })}
