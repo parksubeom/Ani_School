@@ -99,6 +99,7 @@
     border-radius: 20px;
     padding-left: 10px;
     color: #746655;
+    outline-offset: 3px;
 }
 
 .png_Name::placeholder {
