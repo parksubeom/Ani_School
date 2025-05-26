@@ -67,26 +67,18 @@ export const RandomLockBtn = ({ setLockAudio, lockaudio }) => {
     }, 150);
   };
   return (
-    <ul className="lockBtn_box">
-      {allRandomCategory.map((category, idx) => {
-        return (
-          <li key={idx}>
             <button
-              aria-label="잠금버튼"
+              aria-label="잠금"
               type="button"
               value="button"
               className="lockBtn_Design"
-              onClick={() => randomLockBtn(category[1])}
+              onClick={() => randomLockBtn("face")}
             >
-              {category[0] ? (
+              {faceLock ? (
                 <FontAwesomeIcon icon={faUnlock} />
               ) : (
                 <FontAwesomeIcon icon={faLock} />
               )}
             </button>
-          </li>
-        );
-      })}
-    </ul>
   );
 };

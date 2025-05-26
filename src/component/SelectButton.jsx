@@ -9,7 +9,6 @@ import { saveAs } from "file-saver";
 import { useAllRandomBtn } from "../util/hook/useAllRandomBtn";
 import { RandomBtn } from "../util/components/RandomBtn";
 import { SelectBtn } from "util/components/SelectBtn";
-import { RandomLockBtn } from "util/components/RandomLockBtn";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import {
   randomFace,
@@ -38,7 +37,6 @@ function SelectButton() {
   const setRandomPattern = useSetRecoilState(randomPattern);
   const setRandombackground = useSetRecoilState(randomBackground);
   const setSectionFlash = useSetRecoilState(sectionFlash);
-  const [lockaudio, setLockAudio] = useState(false);
   const [audio, setAudio] = useState(false);
   const [flash, setFlash] = useState(false);
   const [download, setDownload] = useState(false);
@@ -93,15 +91,7 @@ function SelectButton() {
         {/*랜덤버튼 리스트 */}
         <RandomBtn setAudio={setAudio} audio={audio} />
         {/*선택버튼 리스트 */}
-        <SelectBtn />
-        {lockaudio ? (
-          <audio
-            src="https://anischool.s3.ap-northeast-2.amazonaws.com/audio/lock.mp3"
-            autoPlay={lockaudio}
-          ></audio>
-        ) : null}
-        {/*잠금버튼 리스트 */}
-        <RandomLockBtn setLockAudio={setLockAudio} lockaudio={lockaudio} />
+        <SelectBtn />   
       </div>
 
       <input
@@ -120,7 +110,6 @@ function SelectButton() {
       <ul className="lastBtn_Box">
         <li>
           <button
-            aria-label="올 랜덤"
             type="button"
             value="button"
             className="AllRandomBtn_Design"
@@ -136,7 +125,6 @@ function SelectButton() {
         </li>
         <li>
           <button
-            aria-label="프로필생성"
             type="button"
             value="button"
             className="CreateProfile_Design"

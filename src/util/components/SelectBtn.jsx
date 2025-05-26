@@ -1,4 +1,5 @@
 import { useRecoilState } from "recoil";
+import { useState } from "react";
 import {
   randomFace,
   randomColor,
@@ -8,8 +9,10 @@ import {
   randomPattern,
   randomBackground,
 } from "../../recoil/Atoms.ts";
+import { RandomLockBtn } from "util/components/RandomLockBtn";
 import { Options } from "data/SelectData";
 export const SelectBtn = () => {
+  const [lockaudio, setLockAudio] = useState(false);
   const [randomface, setRandomFace] = useRecoilState(randomFace);
   const [randomcolor, setRandomColor] = useRecoilState(randomColor);
   const [randomeyes, setRandomEyes] = useRecoilState(randomEyes);
@@ -94,6 +97,14 @@ export const SelectBtn = () => {
                 </option>
               )}
             </select>
+            {lockaudio ? (
+          <audio
+            src="https://anischool.s3.ap-northeast-2.amazonaws.com/audio/lock.mp3"
+            autoPlay={lockaudio}
+          ></audio>
+        ) : null}
+            {/*잠금버튼 리스트 */}
+            <RandomLockBtn setLockAudio={setLockAudio} lockaudio={lockaudio} />
           </li>
         );
       })}

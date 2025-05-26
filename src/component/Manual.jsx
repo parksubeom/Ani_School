@@ -52,7 +52,6 @@ function Manual() {
           autoPlay={bell}
         ></audio>
       ) : null}
-      <div>
         <button
           aria-label="가이드 창 열기"
           className="sideBtn_size"
@@ -60,35 +59,15 @@ function Manual() {
         >
           <div className="sideBtn_Design">
             <div className="shake sideBtn_text">
-              <FontAwesomeIcon aria-label="가이드 창 열기" icon={faBell} />
+              <FontAwesomeIcon icon={faBell} />
             </div>
           </div>
         </button>
-      </div>
-      <button
-        aria-label="외부페이지 이동"
-        className="sideBtn_size"
-        onClick={routeForm}
-      >
-        <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSdR1gs9skIt6DNRYE5GI9blt5J6vgImK8sld5rVblJP1wjjQg/viewform?vc=0&c=0&w=1&flr=0"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <div className="sideBtn_Design">
-            <div className="sideBtn_text">
-              <FontAwesomeIcon
-                aria-label="외부페이지 이동"
-                icon={faListCheck}
-              />
-            </div>
-          </div>
-        </a>
-      </button>
       <button
         aria-label="오디오"
         className="sideBtn_size"
         onClick={handleOnClickAudio}
+        title={audio ? "배경음악 켜짐":"배경음악 꺼짐"}
       >
         <div className="sideBtn_Design">
           <div

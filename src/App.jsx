@@ -20,11 +20,9 @@ function App() {
         <ViewSection className="viewSection" />
         <footer>
           <p>
-            본 프로젝트는 수범,주비의 공동작품입니다.
-            <br />
             페이지내에 사용된 모든 이미지들의
             <br />
-            무단 배포 및 도용을 금지합니다.
+            무단 배포 및 상업적 사용을 금지합니다.
           </p>
         </footer>
       </article>
