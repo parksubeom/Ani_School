@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { lazy } from "react";
 import "./App.css";
 import Manual from "./component/Manual.jsx";
 import Profile from "component/Profile";
