@@ -30,6 +30,15 @@ export const SelectBtn = () => {
     randompattern,
     randombackground,
   ];
+  const selectCategory = [
+    ["얼굴 선택"],
+    ["컬러 선택"],
+    ["눈 선택"],
+    ["입 선택"],
+    ["악세서리 선택"],
+    ["무늬 선택"],
+    ["배경 선택"]
+  ];
   /**
    * 선택한 파츠 요소의 값을 사용자가 선택한 값으로 변경해주는 함수.
    * @param {number}value
@@ -70,7 +79,7 @@ export const SelectBtn = () => {
         return (
           <li key={idx}>
             <select
-              aria-label={select[Object.keys(select)][idx].value}
+              aria-label={selectCategory[idx]}
               className="selectBtn_Design"
               onChange={(event) =>
                 selectBtn(event.target.value, Object.keys(select)[0])

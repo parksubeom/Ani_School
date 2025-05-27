@@ -21,19 +21,19 @@ export const RandomLockBtn = ({ setLockAudio, lockaudio,lockIndex }) => {
   const [patternLock, setPatternLock] = useRecoilState(patternlock);
   const [backgroundLock, setBackgroundLock] = useRecoilState(backgroundlock);
   const allRandomCategory = [
-    [faceLock, "face"],
-    [colorLock, "color"],
-    [eyesLock, "eyes"],
-    [mouthLock, "mouth"],
-    [accLock, "acc"],
-    [patternLock, "parrern"],
-    [backgroundLock, "background"],
+    [faceLock, "얼굴"],
+    [colorLock, "컬러"],
+    [eyesLock, "눈"],
+    [mouthLock, "입"],
+    [accLock, "악세서리"],
+    [patternLock, "무늬"],
+    [backgroundLock, "배경"],
   ];
   /**
    *
    * 원하는 요소가 나올 시 해당요소를 잠금하는 함수
    * 랜덤 또는 올랜덤 버튼을 눌러도 잠긴요소는 값이 바뀌지않는다.
-   * @param {string}locktype
+   * @param {number}locktype
    */
   const randomLockBtn = (locktype) => {
     console.log(locktype)
@@ -69,7 +69,7 @@ export const RandomLockBtn = ({ setLockAudio, lockaudio,lockIndex }) => {
   };
   return (
             <button
-              aria-label="잠금"
+              aria-label={allRandomCategory[lockIndex][1]+"잠금"}
               type="button"
               value="button"
               className="lockBtn_Design"
