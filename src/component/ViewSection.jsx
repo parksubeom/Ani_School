@@ -23,12 +23,12 @@ function ViewSection() {
   const [randompattern] = useRecoilState(randomPattern);
   const [randombackground] = useRecoilState(randomBackground);
   const [sectionflash] = useRecoilState(sectionFlash);
-  let backgroundurl = `https://parksubeom.github.io/Project_RetroAnimal_Generator/img//background/background${randombackground}.png`
-  let faceurl = `https://parksubeom.github.io/Project_RetroAnimal_Generator/img//face/face${randomface}/color${randomcolor}.png`
-  let eyesurl = `https://parksubeom.github.io/Project_RetroAnimal_Generator/img//eye/eye${randomeyes}.png`
-  let mouthurl = `https://parksubeom.github.io/Project_RetroAnimal_Generator/img//mouth/mouth${randommouth}.png`
-  let accurl = `https://parksubeom.github.io/Project_RetroAnimal_Generator/img/acc/acc${randomacc}.png`
-  let patternurl = `https://parksubeom.github.io/Project_RetroAnimal_Generator/img/pattern/pattern${randompattern}.png`
+  let backgroundurl = `https://parksubeom.github.io/Ani_School/img//background/background${randombackground}.webp`
+  let faceurl = `https://parksubeom.github.io/Ani_School/img//face/face${randomface}/color${randomcolor}.webp`
+  let eyesurl = `https://parksubeom.github.io/Ani_School/img//eye/eye${randomeyes}.webp`
+  let mouthurl = `https://parksubeom.github.io/Ani_School/img//mouth/mouth${randommouth}.webp`
+  let accurl = `https://parksubeom.github.io/Ani_School/img/acc/acc${randomacc}.webp`
+  let patternurl = `https://parksubeom.github.io/Ani_School/img/pattern/pattern${randompattern}.webp`
   const srcArr = [
     [backgroundurl, "배경 이미지"],
     [faceurl, "얼굴 이미지"],
