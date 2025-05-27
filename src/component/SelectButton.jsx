@@ -65,7 +65,7 @@ function SelectButton() {
    * 현재 view 섹션에 만들어 진 프로필 이미지를 사용자의 디바이스로 출력하는 함수.
    * png파일의 이름, view섹션의 이미지를 사용자 디바이스로 출력 후 플래시효과를 보여주고 파일제목란을 비워준다.
    */
-  const onDownloadBtn = () => {
+  const onDownloadFile = () => {
     setDownload(!download);
     let filename = pngname ? pngname : "프로필";
     domtoimage.toBlob(document.querySelector(".capture-box")).then((blob) => {
@@ -129,7 +129,7 @@ function SelectButton() {
             type="button"
             value="button"
             className="CreateProfile_Design"
-            onClick={onDownloadBtn}
+            onClick={onDownloadFile}
           >
             프로필생성
           </button>
