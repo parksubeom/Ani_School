@@ -1,5 +1,5 @@
 {
-  "homepage" : "https://parksubeom.github.io/Ani_School/",
+  "homepage": "https://parksubeom.github.io/Ani_School/",
   "name": "animal-app",
   "version": "0.1.0",
   "private": true,
@@ -15,7 +15,6 @@
     "aos": "^3.0.0-beta.6",
     "dom-to-image": "^2.6.0",
     "file-saver": "^2.0.5",
-    "gh-pages": "^5.0.0",
     "html2canvas": "^1.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -48,5 +47,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
