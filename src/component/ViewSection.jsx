@@ -24,9 +24,9 @@ function ViewSection() {
   const [randombackground] = useRecoilState(randomBackground);
   const [sectionflash] = useRecoilState(sectionFlash);
   let backgroundurl = `https://parksubeom.github.io/Ani_School/img//background/background${randombackground}.webp`
-  let faceurl = `https://parksubeom.github.io/Ani_School/img//face/face${randomface}/color${randomcolor}.webp`
-  let eyesurl = `https://parksubeom.github.io/Ani_School/img//eye/eye${randomeyes}.webp`
-  let mouthurl = `https://parksubeom.github.io/Ani_School/img//mouth/mouth${randommouth}.webp`
+  let faceurl = `https://parksubeom.github.io/Ani_School/img/face/face${randomface}/color${randomcolor}.webp`
+  let eyesurl = `https://parksubeom.github.io/Ani_School/img/eye/eye${randomeyes}.webp`
+  let mouthurl = `https://parksubeom.github.io/Ani_School/img/mouth/mouth${randommouth}.webp`
   let accurl = `https://parksubeom.github.io/Ani_School/img/acc/acc${randomacc}.webp`
   let patternurl = `https://parksubeom.github.io/Ani_School/img/pattern/pattern${randompattern}.webp`
   const srcArr = [
