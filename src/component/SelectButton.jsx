@@ -76,6 +76,7 @@ function SelectButton() {
       setDownload(false);
       setFlash(false);
     }, 1000);
+    alert(`${filename}.png 파일이 성공적으로 저장되었습니다.`)
     setPngName("");
   };
 
