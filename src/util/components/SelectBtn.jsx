@@ -108,7 +108,7 @@ export const SelectBtn = () => {
             </select>
             {lockaudio ? (
           <audio
-            src="https://anischool.s3.ap-northeast-2.amazonaws.com/audio/lock.mp3"
+            src="https://parksubeom.github.io/Ani_School/audio/lock.mp3"
             autoPlay={lockaudio}
           ></audio>
         ) : null}

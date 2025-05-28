@@ -41,14 +41,14 @@ function Manual() {
     <div className="sidebutton_Group">
       {manualsound ? (
         <audio
-          src="https://anischool.s3.ap-northeast-2.amazonaws.com/audio/manual1.mp3"
+          src="https://parksubeom.github.io/Ani_School/audio/manual1.mp3"
           autoPlay={manualsound}
         ></audio>
       ) : null}
       {modal ? <Modal handleModal={handleModal} /> : null}
       {bell ? (
         <audio
-          src="https://anischool.s3.ap-northeast-2.amazonaws.com/audio/bell.mp3"
+          src="https://parksubeom.github.io/Ani_School/audio/bell.mp3"
           autoPlay={bell}
         ></audio>
       ) : null}
@@ -79,7 +79,7 @@ function Manual() {
       </button>
       {audio ? (
         <audio
-          src="https://anischool.s3.ap-northeast-2.amazonaws.com/audio/lemon.mp3"
+          src="https://parksubeom.github.io/Ani_School/audio/lemon.mp3"
           autoPlay={audio}
           loop="loop"
         ></audio>

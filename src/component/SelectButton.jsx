@@ -85,7 +85,7 @@ function SelectButton() {
       <div>
         {audio ? (
           <audio
-            src="https://anischool.s3.ap-northeast-2.amazonaws.com/audio/click_1.mp3"
+            src="https://parksubeom.github.io/Ani_School/audio/click_1.mp3"
             autoPlay={audio}
           ></audio>
         ) : null}
@@ -104,7 +104,7 @@ function SelectButton() {
       ></input>
       {download ? (
         <audio
-          src="https://anischool.s3.ap-northeast-2.amazonaws.com/audio/camera2.wav"
+          src="https://parksubeom.github.io/Ani_School/audio/camera2.wav"
           autoPlay={download}
         ></audio>
       ) : null}
