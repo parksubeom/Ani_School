@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Ani_School/static/css/main.b752a987.css",
-    "main.js": "/Ani_School/static/js/main.4af91cfe.js",
+    "main.js": "/Ani_School/static/js/main.e27c54d2.js",
     "static/css/226.454c8c9a.chunk.css": "/Ani_School/static/css/226.454c8c9a.chunk.css",
     "static/js/226.d79eb943.chunk.js": "/Ani_School/static/js/226.d79eb943.chunk.js",
     "static/js/769.e25074b5.chunk.js": "/Ani_School/static/js/769.e25074b5.chunk.js",
@@ -10,13 +10,13 @@
     "static/media/pen.cur": "/Ani_School/static/media/pen.c56291f10e01824520e0.cur",
     "index.html": "/Ani_School/index.html",
     "main.b752a987.css.map": "/Ani_School/static/css/main.b752a987.css.map",
-    "main.4af91cfe.js.map": "/Ani_School/static/js/main.4af91cfe.js.map",
+    "main.e27c54d2.js.map": "/Ani_School/static/js/main.e27c54d2.js.map",
     "226.454c8c9a.chunk.css.map": "/Ani_School/static/css/226.454c8c9a.chunk.css.map",
     "226.d79eb943.chunk.js.map": "/Ani_School/static/js/226.d79eb943.chunk.js.map",
     "769.e25074b5.chunk.js.map": "/Ani_School/static/js/769.e25074b5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b752a987.css",
-    "static/js/main.4af91cfe.js"
+    "static/js/main.e27c54d2.js"
   ]
 }
