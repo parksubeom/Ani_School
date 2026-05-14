@@ -22,7 +22,7 @@ Ani School은 아기자기한 동물 캐릭터 프로필 이미지를 쉽게 생
 
 ## 예시
 
-![readmegif](https://parksubeom.github.io/Ani_School/assets/104641096/dc645f8d-aece-47da-bfe4-3efbccb3d903)
+![readmegif]([https://parksubeom.github.io/Ani_School/assets/104641096/dc645f8d-aece-47da-bfe4-3efbccb3d903](https://github.com/user-attachments/assets/fe0dbe85-d491-4ad9-9397-d29e86bcb690))
 
 ## 기여 및 문제 보고
 
