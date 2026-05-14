@@ -20,10 +20,6 @@ Ani School은 아기자기한 동물 캐릭터 프로필 이미지를 쉽게 생
 
 4. **다운로드:** 생성한 캐릭터를 다운로드하고 프로필 이미지로 사용하세요!
 
-## 예시
-
-![readmegif]([https://github.com/user-attachments/assets/fe0dbe85-d491-4ad9-9397-d29e86bcb690])
-
 ## 기여 및 문제 보고
 
 Ani School은 여러분의 기여를 환영합니다! 버그를 발견하거나 새로운 기능을 제안하려면 [이슈 페이지](https://docs.google.com/forms/d/10kKSvlmLVptyq-lqBhHQuggXGnM8Sm4kaYuGCTgMQdo/edit)에 제보해주세요.
