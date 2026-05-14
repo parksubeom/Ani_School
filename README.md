@@ -12,7 +12,7 @@ Ani School은 아기자기한 동물 캐릭터 프로필 이미지를 쉽게 생
 
 ## 사용법
 
-1. **서비스 접속:** [Ani School](https://parksubeom.github.io/Project_RetroAnimal_Generator/)에 접속합니다.
+1. **서비스 접속:** [Ani School](https://parksubeom.github.io/Ani_School/)에 접속합니다.
 
 2. **동물 캐릭터 생성:** 다양한 옵션을 선택하여 자신만의 동물 캐릭터를 생성합니다.
 
@@ -22,7 +22,7 @@ Ani School은 아기자기한 동물 캐릭터 프로필 이미지를 쉽게 생
 
 ## 예시
 
-![readmegif](https://github.com/parksubeom/Project_RetroAnimal_Generator/assets/104641096/dc645f8d-aece-47da-bfe4-3efbccb3d903)
+![readmegif](https://parksubeom.github.io/Ani_School/assets/104641096/dc645f8d-aece-47da-bfe4-3efbccb3d903)
 
 ## 기여 및 문제 보고
 
